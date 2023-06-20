@@ -117,11 +117,26 @@ function ortalamaBul(){
             teklifEkrani.classList.add("active")
         }, 500);
     }
-    else if(index === 1){
-        setTimeout(() => {
-            location.reload()
-        }, 4000);
-    }
+
+    let kutular1 = document.querySelectorAll(".box")
+
+    kutular1.forEach((item)=>{
+        if(index === 1 && !item.classList.contains("arka-plan")){
+            teklifEkrani.classList.add("active")
+            yaziBir.innerHTML = "KAZANCINIZ"
+            teklifEkraniResim.src = "kabulresim.jpg";
+            
+            teklifEkraniPara.innerHTML = `${item.dataset.value} TL`;
+            kabulBtn.style.display = "none"
+            devamBtn.style.display = "none"
+
+            setTimeout(()=>{
+                location.reload()
+            },2000)
+        }
+    })
+
+
 }
 
 kabulBtn.addEventListener("click", function(){
@@ -129,10 +144,25 @@ kabulBtn.addEventListener("click", function(){
     teklifEkraniPara.innerHTML = "PARANIZI KASADAN ALINIZ"
     setTimeout(()=>{
         location.reload()
-    },6000)
+    },2000)
 })
 
 let artis = 0;
+
+function paraOrt() {
+    const kutular1 = document.querySelectorAll(".box");
+    const arkaPlanOlmayanDatasetler = Array.from(kutular1)
+      .filter(item => !item.classList.contains("arka-plan"))
+      .map(item => parseInt(item.dataset.value));
+  
+    const datasetOrtalamasi = arkaPlanOlmayanDatasetler.reduce(
+      (sum, value) => sum + value,
+      0
+    ) / arkaPlanOlmayanDatasetler.length;
+  
+    return datasetOrtalamasi;
+  }
+  
 
 devamBtn.addEventListener("click", function(){
     artis++;
@@ -145,7 +175,7 @@ devamBtn.addEventListener("click", function(){
         }
         teklifEkrani.classList.remove("active")
         teklifEkraniResim.src = "kasa-resim.jpg";
-        teklifEkraniPara.innerHTML = `${tumPara(teklifPara)} TL`;
+        teklifEkraniPara.innerHTML = `${tumPara(paraOrt())} TL`;
         let kutu = document.querySelectorAll(".box")
             kutu.forEach((item)=>{
                 item.classList.remove("etkisiz")
