@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Asap&family=Black+Han+Sans&family=Faster+One&family=Inter&family=Lexend+Deca:wght@600&family=Manrope&family=Nosifer&family=Orienta&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,900&family=Russo+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#genel{
+    min-height: 100vh;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.genel_h2{
+    font-size: 20px;
+}
+
+.genel_h2 span{
+    font-size: 20px;
+    color: #b36cd2;
+    font-weight: bold;
+}
+
+.para-teklif{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.para-teklif h2{
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.para-miktari{
+    width: 40px;
+    height: 40px;
+    background-color: #104058;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+main{
+    width: 100%;
+    margin-top: 40px;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.bir{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #dfdada;
+    min-width: 250px;
+    border-radius: 10px;
+}
+
+.bir .kutu{
+    text-align: center;
+    margin: 5px 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #bbb8b8;
+}
+
+.bir .kutu.active{
+    background-color: #aa1f05;
+    text-decoration: line-through;
+    color: #fff;
+}
+
+
+.orta-kutular{
+    width: 100%;
+}
+
+.orta-kutular .kutular{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.kutular .box{
+    width: 100px;
+    height: 100px;
+    background-color: #6d7ba1;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.kutular .box.arka-plan{
+    background-color: #e1d9d9;
+    color: #000000;
+    text-decoration:line-through;
+    pointer-events: none;
+}
+
+.kutular .box.etkisiz{
+    pointer-events: none;
+}
+
+
+.box h1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.kurallar{
+    display: flex;
+    justify-content: center;
+}
+
+.hover{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.teklif-ekrani {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #6d7ba1;
+    border-radius: 20px;
+    width: 450px;
+    height: 450px;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.butonlar{
+    display: flex;
+    margin-top: 40px;
+}
+
+.butonlar button{
+    margin: 0 10px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #000000;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.butonlar button:hover{
+    background-color: #aa1f05;
+    color: #fff;
+}
+
+.teklif-ekrani img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.teklif-ekrani h2{
+    color: #fff;
+    margin-top: 5px;
+}
+
+.teklif-ekrani span{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.teklif-ekrani.active{
+    display: flex;
+}
+
+button:active{
+    background-color: #aa1f05;
+    color: #fff;
+}
+
+.adi-yok{
+    text-align: center;
+    margin: 5px 0;
+    font-size: 20px;
+    color: #b36cd2;
+}
